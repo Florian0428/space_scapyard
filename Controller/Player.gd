@@ -76,6 +76,8 @@ var zoom := min_zoom:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Whenever the player loads in, give the autoload ui a reference to itself.
+	UserInterface.update_player(self)
 
 
 func _physics_process(delta: float) -> void:
