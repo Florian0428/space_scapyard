@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6tfqxjbitwa" path="res://assets/yard/Junk yard.fbx" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://cuivvwniy7otd" path="res://assets/bar1.fbx" id="3_xwkvk"]
 [ext_resource type="PackedScene" path="res://Junks/JunkItem.tscn" id="5_junk1"]
-[ext_resource type="PackedScene" uid="uid://c1hqljjwwuenr" path="res://Junks/Scale.tscn" id="6_scale1"]
+[ext_resource type="PackedScene" path="res://Junks/Scale.tscn" id="6_scale1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pjrb6"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,20 +36,20 @@ size = Vector3(86.734985, 1, 84.42322)
 transform = Transform3D(0.305, 0, 0, 0, 0.305, 0, 0, 0, 0.305, 2.461609, 0, -1.7462769)
 
 [node name="Player" parent="." unique_id=334479243 instance=ExtResource("1_53q0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6257324, 0.92499995, 9.111345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91822815, 0.9249995, 9.111345)
 
 [node name="bar1" parent="." unique_id=2135133830 instance=ExtResource("3_xwkvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.448914, 1.5030302, 6.870867)
 
-[node name="TestJunk1" parent="." unique_id=534091406 instance=ExtResource("5_junk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41325, 0.29999924, 9)
-weight = 4.14
+[node name="TestJunk1" parent="." unique_id=829758500 instance=ExtResource("5_junk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5577946, 0.29999924, 2.7127457)
 
-[node name="TestJunk2" parent="." unique_id=1721520247 instance=ExtResource("5_junk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.713249, 0.29999924, 10)
+[node name="TestJunk2" parent="." unique_id=854334940 instance=ExtResource("5_junk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.857794, 0.29999924, 3.7127457)
+weight = 4.585
 
-[node name="TestJunk3" parent="." unique_id=274607431 instance=ExtResource("5_junk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.41325, 0.29999924, 8)
+[node name="TestJunk3" parent="." unique_id=1880263934 instance=ExtResource("5_junk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.557795, 0.29999924, 1.7127457)
 
-[node name="TestScale" parent="." unique_id=673472210 instance=ExtResource("6_scale1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1818924, -4.7683716e-07, 12.4263115)
+[node name="TestScale" parent="." unique_id=1057616548 instance=ExtResource("6_scale1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7128906, -4.7683716e-07, 11)

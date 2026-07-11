@@ -23,9 +23,6 @@ class_name Junk
 ## így egy nehezebb darab a fizikában is nehezebbnek fog érződni.
 @export var affect_physics_mass: bool = true
 
-
-
-
 const RARITY_MULTIPLIERS := {
 	"Common": 1.0,
 	"Uncommon": 1.5,

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bdj35fmdai5ue"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvyrc"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qh22o"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa1fk"]
+albedo_color = Color(0.6, 0.35, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3gtmn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3yxk1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xu8v5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ukucy"]
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=150480682]
+
+[node name="CollisionShape_table" type="CollisionShape3D" parent="." unique_id=581406925]
+shape = SubResource("BoxShape3D_pvyrc")
+
+[node name="MeshInstance_table" type="MeshInstance3D" parent="." unique_id=597472007]
+mesh = SubResource("BoxMesh_qh22o")
+surface_material_override/0 = SubResource("StandardMaterial3D_fa1fk")
+
+[node name="MeshInstance_monitor1" type="MeshInstance3D" parent="." unique_id=1070952249]
+mesh = SubResource("BoxMesh_3gtmn")
+
+[node name="CollisionShape_monitor1" type="CollisionShape3D" parent="." unique_id=1877543053]
+visible = false
+shape = SubResource("BoxShape3D_3yxk1")
+
+[node name="MeshInstance_monitor2" type="MeshInstance3D" parent="." unique_id=717547469]
+mesh = SubResource("BoxMesh_xu8v5")
+
+[node name="CollisionShape_monitor2" type="CollisionShape3D" parent="." unique_id=313650207]
+visible = false
+shape = SubResource("BoxShape3D_ukucy")
