@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c1hqljjwwuenr"]
+
+[ext_resource type="Script" uid="uid://iq0vw2h2gp4s" path="res://Junks/Scale.gd" id="1_scale"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_platform"]
+size = Vector3(1.5, 0.15, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_platform"]
+albedo_color = Color(0.25, 0.27, 0.3, 1)
+metallic = 0.6
+roughness = 0.35
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_platform"]
+size = Vector3(1.5, 0.15, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_detection"]
+size = Vector3(1.4, 1, 1.4)
+
+[node name="Scale" type="Node3D" unique_id=174005644]
+script = ExtResource("1_scale")
+
+[node name="Platform" type="StaticBody3D" parent="." unique_id=876794426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+
+[node name="PlatformMesh" type="MeshInstance3D" parent="Platform" unique_id=1214512772]
+mesh = SubResource("BoxMesh_platform")
+surface_material_override/0 = SubResource("StandardMaterial3D_platform")
+
+[node name="PlatformCollision" type="CollisionShape3D" parent="Platform" unique_id=1543860699]
+shape = SubResource("BoxShape3D_platform")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=192530146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+
+[node name="DetectionShape" type="CollisionShape3D" parent="DetectionArea" unique_id=1782284644]
+shape = SubResource("BoxShape3D_detection")
+
+[node name="DisplayLabel" type="Label3D" parent="." unique_id=108854166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+billboard = 1
+no_depth_test = true
+text = "0.0 kg"
+font_size = 48

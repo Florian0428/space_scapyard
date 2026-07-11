@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://sbl4rscivr8g"]
+[gd_scene format=3 uid="uid://sbl4rscivr8g"]
 
-[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://UserInterface/UITheme.tres" id="1_ga3o8"]
-[ext_resource type="Script" path="res://UserInterface/SettingsContainer.gd" id="2_yf2ij"]
+[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Autoloads/UserInterface/UITheme.tres" id="1_ga3o8"]
+[ext_resource type="Script" uid="uid://cqt7wuxstsfe" path="res://Autoloads/UserInterface/SettingsContainer.gd" id="2_yf2ij"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cu3mp"]
 content_margin_left = 64.0
@@ -320,6 +320,31 @@ popup/item_3/id = 3
 popup/item_4/text = "Very High"
 popup/item_4/id = 4
 
+[node name="WeightUnitPanel" type="PanelContainer" parent="VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p2enc")
+
+[node name="WeightUnitContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Gameplay/WeightUnitPanel"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="WeightUnitLabel" type="Label" parent="VBoxContainer/TabContainer/Gameplay/WeightUnitPanel/WeightUnitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Weight Unit"
+
+[node name="WeightUnitDropdown" type="OptionButton" parent="VBoxContainer/TabContainer/Gameplay/WeightUnitPanel/WeightUnitContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+item_count = 2
+selected = 0
+popup/item_0/text = "kg"
+popup/item_0/id = 0
+popup/item_1/text = "lb"
+popup/item_1/id = 1
+
 [node name="Debug" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
@@ -356,5 +381,6 @@ text = "Back"
 [connection signal="value_changed" from="VBoxContainer/TabContainer/Audio/SFXPanel/SFXContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/TabContainer/Gameplay/FOVPanel/FOVContainer/FOVSlider" to="." method="_on_fov_slider_value_changed"]
 [connection signal="item_selected" from="VBoxContainer/TabContainer/Gameplay/SensitivityPanel/SensitivityContainer/SensitivityDropdown" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Gameplay/WeightUnitPanel/WeightUnitContainer/WeightUnitDropdown" to="." method="_on_weight_unit_dropdown_item_selected"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/Debug/ReloadPanel/ReloadContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

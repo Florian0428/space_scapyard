@@ -6,6 +6,7 @@ class_name UI
 @onready var settings_container: MarginContainer = %SettingsContainer
 @onready var resume_button: Button = %ResumeButton
 @onready var color_rect_fader: ColorRect = $ColorRectFader
+@onready var stamina_bar: ProgressBar = %StaminaBar
 
 var paused := false:
 	set(value):
@@ -63,6 +64,15 @@ func fade_out(tween_in: Tween):
 # Update the reference to the player variable in the settings container.
 func update_player(player_in: Player) -> void:
 	settings_container.update_player(player_in)
+	# Set up the stamina bar and keep it in sync with the player's stamina.
+	stamina_bar.max_value = player_in.max_stamina
+	stamina_bar.value = player_in.stamina
+	if not player_in.stamina_changed.is_connected(_on_player_stamina_changed):
+		player_in.stamina_changed.connect(_on_player_stamina_changed)
+
+func _on_player_stamina_changed(current: float, max_value: float) -> void:
+	stamina_bar.max_value = max_value
+	stamina_bar.value = current
 
 # Fade the screen out, reload the level and fade back in.
 func restart_current_scene() -> void:

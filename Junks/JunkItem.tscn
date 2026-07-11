@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Junks/Junk.gd" id="1_junk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_junk"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_junk"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_junk"]
+albedo_color = Color(0.6, 0.35, 0.15, 1)
+
+[node name="JunkItem" type="RigidBody3D"]
+script = ExtResource("1_junk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_junk")
+
+[node name="MeshPlaceholder" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_junk")
+surface_material_override/0 = SubResource("StandardMaterial3D_junk")

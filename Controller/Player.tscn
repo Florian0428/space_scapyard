@@ -263,6 +263,9 @@ shape = SubResource("CapsuleShape3D_t7spk")
 [node name="CameraTarget" type="Node3D" parent="." unique_id=1176711488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57, 0)
 
+[node name="HoldPoint" type="Node3D" parent="CameraTarget" unique_id=1529072986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -1.4)
+
 [node name="SmoothCamera" type="Camera3D" parent="." unique_id=1624666741 node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 cull_mask = 1047549

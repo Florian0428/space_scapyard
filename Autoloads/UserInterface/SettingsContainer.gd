@@ -24,6 +24,7 @@ var _player: Player
 @onready var shadow_option_button: OptionButton = %ShadowOptionButton
 @onready var ssaa_option_button: OptionButton = %SSAAOptionButton
 @onready var msaa_option_button: OptionButton = %MSAAOptionButton
+@onready var weight_unit_dropdown: OptionButton = %WeightUnitDropdown
 
 @onready var master_slider: HSlider = %MasterSlider
 @onready var music_slider: HSlider = %MusicSlider
@@ -41,6 +42,9 @@ func _ready() -> void:
 	
 	# Default sensitivity to medium.
 	sensitivity_dropdown.select(sensitivity_dropdown.selected)
+	
+	# Default weight unit to whatever Units autoload currently has set.
+	weight_unit_dropdown.select(Units.weight_unit)
 	
 	# Default shadow quality to medium.
 	shadow_option_button.select(shadow_option_button.selected)
@@ -83,6 +87,10 @@ func _on_option_button_item_selected(index: int) -> void:
 			_player.mouse_sensitivity = high_sens
 		4:
 			_player.mouse_sensitivity = very_high_sens
+
+
+func _on_weight_unit_dropdown_item_selected(index: int) -> void:
+	Units.weight_unit = index as Units.WeightUnit
 
 func _on_fullscreen_check_button_toggled(button_pressed: bool) -> void:
 	if button_pressed:
